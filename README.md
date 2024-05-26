@@ -17,4 +17,4 @@ up and prove some counting things. More to the point...
 * The `lenstra_lenstra_lovasz.py` file contains code to compute the Lenstra-Lenstra-Lovász algorithm for the
     proof of the hook-length formula. It is outlined in the paper by Arjen K. Lenstra, Hendrik W. Lenstra Jr.,
     and László Lovász,
-    [Factoringpolynomials with rational coefficients](https://en.wikipedia.org/wiki/Lenstra%E2%80%93Lenstra%E2%80%93Lov%C3%A1sz_lattice_basis_reduction_algorithm).
+    [Factoring polynomials with rational coefficients](https://en.wikipedia.org/wiki/Lenstra%E2%80%93Lenstra%E2%80%93Lov%C3%A1sz_lattice_basis_reduction_algorithm).
