@@ -2,8 +2,6 @@ import itertools
 import random
 import numpy as np
 
-#-------------------------- Procedures for testing --------------------
-
 def Perm2YT(pi, lambda_):
     if not pi:
         return []
@@ -34,8 +32,6 @@ def RandNPS(lambda_):
     T2 = SPN(NPS(T1))
     if T1 != T2:
         raise ValueError(f"Bijection failed for tableau {T1}")
-
-#-------------------------- Helper procedures --------------------
 
 def LowerOrderTableau(T, c):
     M = np.zeros((len(T) + 1, len(T[0]) + 1), dtype=int)
@@ -154,8 +150,6 @@ def isCodeMax(Codes, C):
         if not CodeLE(D, C):
             return False
     return True
-
-#-------------------------- The maps ---------------------------
 
 def NPS(T):
     if isinstance(T, set):
