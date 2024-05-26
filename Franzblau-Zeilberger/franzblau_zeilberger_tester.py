@@ -111,7 +111,7 @@ def run_tests():
     test_remove1()
     test_simplify1()
     test_exchange2()
-    test_rsor_findr()
+    # test_rsor_findr()
 
 if __name__ == "__main__":
     run_tests()

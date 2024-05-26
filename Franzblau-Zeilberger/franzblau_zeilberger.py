@@ -5,14 +5,17 @@ def Chop(lam):
     return lam[:i]
 
 def BadElem(T):
-    if not T:
+    if not T or not any(T):
         return "ERROR: There is no Tableau!"
+
     trans = Transpose(T)
     bad = [0, 0, 0]
+
     for j in range(len(T[0])):
         for i in range(len(trans[j]) - 1):
             if T[i + 1][j] < T[i][j] and (T[i + 1][j] < bad[0] or bad[0] == 0):
-                bad = [T[i + 1][j], i + 1, j]
+                bad = [T[i + 1][j], i + 2, j + 1]
+
     return bad
 
 def SatisfyDC(T, d):
@@ -63,22 +66,26 @@ def RSORT(YT):
     T = []
     S = []
     trans = Transpose(YT)
-    for K in range(len(trans), 0, -1):
+    for K in range(len(YT[0]), 0, -1):
         a = trans[K - 1]
+        print(f"Processing column {K}: {a}")
         temp = IC(a, T, S)
         T = temp[0]
         S = temp[1]
+        print(f"Intermediate T: {T}")
+        print(f"Intermediate S: {S}")
     return [T, S]
 
 def FINDR(T, S):
     Tnew = T
     Snew = S
     trans = [[] for _ in range(len(T[0]))]
-    for K in range(len(T[0])):
+    for K in range(1, len(T[0]) + 1):
         temp = DC(Tnew, Snew)
-        trans[K] = temp[0]
+        trans[K - 1] = temp[0]
         Tnew = temp[1]
         Snew = temp[2]
+        print(f"Step {K}: trans={trans}, Tnew={Tnew}, Snew={Snew}")
     return Transpose(trans)
 
 def INSERT1(aj, j, T):
@@ -148,7 +155,6 @@ def IC(a, T, S):
         bad = BadElem(Tnew)
     Snew = BuildS([[d[i]] for i in range(len(a))], S)
     return Tnew, Snew
-
 def DC(T, S):
     d = [S[j][0] for j in range(len(T))]
     satisfy = SatisfyDC(T, d)
