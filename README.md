@@ -1,12 +1,5 @@
 ### Some combinatorics code
-I like counting things. Sometimes, counting is easy and I can do it with my fingers. Other times, counting is
-not as trivial and I need a pen and paper and permutations and combinations to count things. Sometimes, counting
-doesn't seem as trivial as we typically think it to be, and I need to write code to count well. This repository
-contains some of the code I have written to count things over the years. I hope you find it useful. Or at least
-interesting. Or at least not boring. Or at least not too boring. Or at least not too boring to the point that you
-fall asleep. Or at least not too boring to the point that you fall asleep and start snoring. But interesting 
-enough that you count and count and count and fall asleep and start snoring and dream about counting, and wake
-up and prove some counting things. More to the point...
+I like counting things. But more to the point...
 * The `novelli_pak_stoyanovskii.py` file contains code to compute the Novelli-Pak-Stoyanovskii algorithm for the
     proof of the hook-length formula. It is outlined in the paper by Jean-Christophe Novelli, Igor Pak,
     and Alexander Stoyanovskii, [A direct bijective proof of the hook-length
